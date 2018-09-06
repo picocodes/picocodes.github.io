@@ -109,23 +109,23 @@
 									<div class="tab-content">
 										<div class="tab-content-inner active" data-content="signup">
 											<h3>Book Your Trip</h3>
-											<form action="#">
+											<form id="booking-form" action="#">
 												<div class="row form-group">
 													<div class="col-md-12">
 														<label for="fullname">Your Name</label>
-														<input type="text" id="fullname" class="form-control">
+														<input name="name" type="text" id="fullname" class="form-control">
 													</div>
 												</div>
 												<div class="row form-group">
 													<div class="col-md-12">
 														<label for="telephone">Phone Number</label>
-														<input type="text" id="telephone" class="form-control">
+														<input name="phone" type="tel" id="telephone" class="form-control">
 													</div>
 												</div>
 												<div class="row form-group">
 													<div class="col-md-12">
 														<label for="ticket">Ticket Type</label>
-														<select name="#" id="ticket" class="form-control">
+														<select name="ticket" id="ticket" class="form-control">
 															<option value="regular">Regular</option>
 															<option value="couple">Couples</option>
 												
@@ -135,7 +135,7 @@
 												<div class="row form-group">
 													<div class="col-md-12">
 														<label for="location">Location</label>
-														<select name="#" id="location" class="form-control">
+														<select name="location" id="location" class="form-control">
 															<option value="nairobi">Nairobi</option>
 															<option value="chuka">Chuka</option>
 															<option value="embu">Embu</option>
@@ -152,6 +152,26 @@
 													</div>
 												</div>
 											</form>
+
+											<script>
+												( function( $ ) {
+
+													$('#booking-form').on('submit', function(e){
+														
+														//Prevent default action
+														e.preventDefault()
+
+														//Set variable
+														var that = this
+														var toUrl = 'https://script.google.com/macros/s/AKfycbymMCBVXSVt1InbToPEwRImxvwE20-A0VVlrTtbZxAETnw3xyI/exec'
+														
+														//Post the form data
+														$.post( toUrl, $('#booking-form').serialize())
+															.then(response => console.log('Success!', response))
+																.catch(error => console.error('Error!', error.message))
+													});
+												} )( jQuery );
+												  </script>
 										</div>
 
 										
@@ -212,6 +232,7 @@
 							  <div class="feature-item">
 									<i class="icon-star" style="font-size: 64px; color: #08c;"></i>
 								<h3>Photoshoot</h3>
+								<p>Take an unlimited number of professional photos.</p>
 							  </div>
 							</div>
 							<div class="col-md-6">
