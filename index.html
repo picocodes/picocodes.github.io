@@ -169,9 +169,14 @@
 														var toUrl = 'https://script.google.com/macros/s/AKfycbymMCBVXSVt1InbToPEwRImxvwE20-A0VVlrTtbZxAETnw3xyI/exec'
 														
 														//Post the form data
-														$.post( toUrl, $('#booking-form').serialize())
-															.then(response => console.log('Success!', response))
-																.catch(error => console.error('Error!', error.message))
+														$.post( toUrl, 
+																$('#booking-form').serialize(),
+																function( data ){
+																	console.log( data )
+																})
+																.fail(function( data ){
+																	console.log( data )
+																})
 													});
 												} )( jQuery );
 												  </script>
