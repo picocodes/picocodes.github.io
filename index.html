@@ -164,6 +164,9 @@
 														//Prevent default action
 														e.preventDefault()
 
+														//Display a loader
+														$('.gtco-loader').show();
+
 														//Set variable
 														var that = this
 														var toUrl = 'https://script.google.com/macros/s/AKfycbymMCBVXSVt1InbToPEwRImxvwE20-A0VVlrTtbZxAETnw3xyI/exec'
@@ -172,10 +175,24 @@
 														$.post( toUrl, 
 																$('#booking-form').serialize(),
 																function( data ){
-																	console.log( data )
+
+																	//Hide the loader
+																	$('.gtco-loader')
+																		.css('background-image', 'none')
+																		.css('background-color', '#337ab7')
+																		.css('color', '#fff')
+																		.html('<div class="center-block" style="max-width: 360px;margin-top: 200px;font-size: 20px;">Booking successful. An agent will contact you soon with more details.</div>')
+
 																})
 																.fail(function( data ){
-																	console.log( data )
+
+																	//Hide the loader
+																	$('.gtco-loader')
+																		.css('background-image', 'none')
+																		.css('background-color', '#337ab7')
+																		.css('color', '#fff')
+																		.html('<div class="center-block" style="max-width: 360px;margin-top: 200px;font-size: 20px;">There was an error while booking. Please refresh the page and try again.</div>')
+
 																})
 													});
 												} )( jQuery );
