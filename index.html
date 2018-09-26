@@ -112,7 +112,7 @@
 									<div class="tab-content">
 										<div class="tab-content-inner active" data-content="signup">
 											<h3>Book Your Trip</h3>
-											<form onSubmit="gtag('event', 'book');" id="booking-form" action="#">
+											<form id="booking-form" action="#">
 												<div class="row form-group">
 													<div class="col-md-12">
 														<label for="fullname">Your Name</label>
@@ -163,6 +163,9 @@
 														
 														//Prevent default action
 														e.preventDefault()
+														
+														//Inform Google Analytics
+														 gtag('event', 'book');
 
 														//Display a loader
 														$('.gtco-loader').show();
