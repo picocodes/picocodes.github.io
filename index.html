@@ -83,9 +83,9 @@
 				</div>
 				<div class="col-xs-8 text-right menu-1">
 					<ul>
-						<li><a href="https://merryandmemories.co.ke#activities">Activities</a></li>
-						<li><a href="https://merryandmemories.co.ke#pay-section">Book Now</a></li>
-						<li><a href="https://merryandmemories.co.ke/contact">Contact</a></li>
+						<li><a onSubmit="gtag('event', 'menu', { 'event_label' : 'Activities' });" href="https://merryandmemories.co.ke#activities">Activities</a></li>
+						<li><a onSubmit="gtag('event', 'menu', { 'event_label' : 'Book Now' });" href="https://merryandmemories.co.ke#pay-section">Book Now</a></li>
+						<li><a onSubmit="gtag('event', 'menu', { 'event_label' : 'Contact' });" href="https://merryandmemories.co.ke/contact">Contact</a></li>
 					</ul>	
 				</div>
 			</div>
@@ -112,7 +112,7 @@
 									<div class="tab-content">
 										<div class="tab-content-inner active" data-content="signup">
 											<h3>Book Your Trip</h3>
-											<form id="booking-form" action="#">
+											<form onSubmit="gtag('event', 'book');" id="booking-form" action="#">
 												<div class="row form-group">
 													<div class="col-md-12">
 														<label for="fullname">Your Name</label>
@@ -384,7 +384,7 @@
 			</div>
 			<div class="row animate-box">
 				<div class="col-md-8 col-md-offset-2">
-					<form action="https://dronesasa.us15.list-manage.com/subscribe/post?u=dba0e3bad3122a8cb41e8ecc0&amp;id=6b7e97127e" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate form-inline" target="_blank" novalidate>
+					<form onSubmit="gtag('event', 'subscribe');" action="https://dronesasa.us15.list-manage.com/subscribe/post?u=dba0e3bad3122a8cb41e8ecc0&amp;id=6b7e97127e" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate form-inline" target="_blank" novalidate>
 						<div class="col-md-6 col-sm-6">
 							<div class="form-group">
 								<label for="email" class="sr-only">Email</label>
@@ -428,10 +428,10 @@
 					<div class="gtco-widget">
 						<h3>Get In Touch</h3>
 						<ul class="gtco-quick-contact">
-							<li><a href="tel:+254702210390"><i class="icon-phone"></i> +254 702 210390</a> Elo</li>
-							<li><a href="tel:+254726554902"><i class="icon-phone"></i> +254 726 554902</a> Kaz</li>
+							<li><a onClick="gtag('event', 'contact', { 'event_label' : 'Elo' });" href="tel:+254702210390"><i class="icon-phone"></i> +254 702 210390</a> Elo</li>
+							<li><a onClick="gtag('event', 'contact', { 'event_label' : 'Kaz' });" href="tel:+254726554902"><i class="icon-phone"></i> +254 726 554902</a> Kaz</li>
 							
-							<li><a href="mailto:merryandmemories@gmail.com"><i class="icon-mail2"></i> merryandmemories@gmail.com</a></li>
+							<li><a onClick="gtag('event', 'contact', { 'event_label' : 'Email' });" href="mailto:merryandmemories@gmail.com"><i class="icon-mail2"></i> merryandmemories@gmail.com</a></li>
 						</ul>
 					</div>
 				</div>
@@ -446,10 +446,10 @@
 					</p>
 					<p class="pull-right">
 						<ul class="gtco-social-icons pull-right">
-							<li><a href="#"><i class="icon-twitter"></i></a></li>
-							<li><a href="#"><i class="icon-facebook"></i></a></li>
-							<li><a href="#"><i class="icon-linkedin"></i></a></li>
-							<li><a href="#"><i class="icon-dribbble"></i></a></li>
+							<li><a onClick="gtag('event', 'share', { method : 'Twitter' });" href="https://twitter.com/home?status=Visit%20Mt%20Kenya%20https%3A//merryandmemories.co.ke"><i class="icon-twitter"></i></a></li>
+							<li><a onClick="gtag('event', 'share', { method : 'Facebook' });" href="https://www.facebook.com/sharer/sharer.php?u=https%3A//merryandmemories.co.ke"><i class="icon-facebook"></i></a></li>
+							<li><a onClick="gtag('event', 'share', { method : 'Linkedin' });" href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A//merryandmemories.co.ke&title=Visit%20Mt%20Kenya&summary=&source="><i class="icon-linkedin"></i></a></li>
+							<li><a onClick="gtag('event', 'share', { method : 'Dribble' });" href="#"><i class="icon-dribbble"></i></a></li>
 						</ul>
 					</p>
 				</div>
