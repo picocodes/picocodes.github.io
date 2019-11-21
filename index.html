@@ -170,38 +170,31 @@
 														e.preventDefault()
 														
 														//Inform Google Analytics
-														 gtag('event', 'book', {'value': 1500});
+														 gtag('event', 'book', {'value': 1000});
 
 														//Display a loader
-														$('.gtco-loader').show();
+														$(this).fadeTo( "slow" , 0.5 );
 
 														//Set variable
 														var that = this
 														var toUrl = 'https://script.google.com/macros/s/AKfycbymMCBVXSVt1InbToPEwRImxvwE20-A0VVlrTtbZxAETnw3xyI/exec'
 														
 														//Post the form data
-														$.post( toUrl, 
-																$('#booking-form').serialize(),
-																function( data ){
+														$.post( toUrl, $('#booking-form').serialize() )
+															.always(function( data ){
 
 																	//Hide the loader
-																	$('.gtco-loader')
-																		.css('background-image', 'none')
-																		.css('background-color', '#337ab7')
-																		.css('color', '#fff')
-																		.html('<div class="center-block" style="max-width: 360px;margin-top: 200px;font-size: 20px;">Booking successful. An agent will contact you soon with more details.</div>')
+																	$('#page')
+																		.css({
+																			display: 'flex',
+																			flexDirection: 'column',
+																			alignItems: 'center',
+																			justifyContent: 'center',
+																			height: '100vh',
+																		})
+																		.html('<p>Your details have been saved. To complete your booking:</p><ol><li>Go To M-Pesa</li><li>Buy Goods And Services</li><li>Till Number - 802542</li><li>Amount 1,000</li></ol>')
 
-																})
-																.fail(function( data ){
-
-																	//Hide the loader
-																	$('.gtco-loader')
-																		.css('background-image', 'none')
-																		.css('background-color', '#337ab7')
-																		.css('color', '#fff')
-																		.html('<div class="center-block" style="max-width: 360px;margin-top: 200px;font-size: 20px;">There was an error while booking. Please refresh the page and try again.</div>')
-
-																})
+															})
 													});
 												} )( jQuery );
 												  </script>
